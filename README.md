@@ -1,6 +1,6 @@
 # ActionScript3 isn't dead appearantly
 
-to build use apache-royale compiler, only omitting vanilla js because a custom html is provided. in bin/js-release
+to build use apache-royale compiler, only emitting vanilla js because a custom html is provided. in bin/js-release
 ```
 mxmlc -tragets=JS src/Sketch.as
 ```
@@ -18,12 +18,12 @@ package
 
 	public class Sketch extends p5.Sketch
 	{
-		public override function setup(): void
+		override public function setup(): void
 		{
 			createCanvas(400, 400)
 		}
 
-		public override function draw(): void
+		override public function draw(): void
 		{
 			background(220)
 		}

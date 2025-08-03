@@ -4,23 +4,68 @@ package p5
 	{
 		public function Sketch()
 		{
-			instance = new window["p5"](Main)
+			instance = new window["p5"](main)
 		}
 
-		public function Main(_p5: Object): void
+		private function main(pInst: Object): void
 		{
-			_p5.setup = setup
-			_p5.draw = draw
+			pInst.setup = setup
+			pInst.draw = draw
 		}
 
-		public function createCanvas(Width: Number, Height: Number): void
+		public function describe(text: String): void
+		{
+			instance["describe"](text)
+		}
+
+		public function createCanvas(Width: Number = 100, Height: Number = 100): void
 		{
 			instance["createCanvas"](Width, Height)
 		}
 
-		public function background(Color: Number): void
+		public function color(...args): Object
 		{
-			instance["background"](Color)
+			return instance["color"](args)
+		}
+
+		public function background(...args): void
+		{
+			instance["background"](args)
+		}
+
+		public function fill(...args): void
+		{
+			instance["fill"](args)
+		}
+
+		public function stroke(...args): void
+		{
+			instance["stroke"](args)
+		}
+
+		public function circle(x: Number = 0, y: Number = 0, d: Number = 0): void
+		{
+			instance["circle"](x, y, d)
+		}
+
+		public function noFill(): void
+		{
+			instance["noFill"]()
+		}
+
+		public function noStroke(): void
+		{
+			instance["noStroke"]()
+		}
+
+		public function get deltaTime(): Number
+		{
+			return instance["deltaTime"] == 0 ? 0.001 * instance["deltaTime"] : 1.00/60 
+		}
+
+		public function get frameCount(): Number
+		{
+			return instance["frameCount"]
 		}
 
 		public function setup(): void {}
