@@ -1,48 +1,94 @@
 package
 {
-	import p5.Sketch;
-
-	public class Sketch extends p5.Sketch
+	public class Sketch
 	{
-		override public function setup(): void
+		public function Sketch()
 		{
-			createCanvas(canvasW, canvasH)
-			describe('a red ball bouncing in a black background')
+			COMPILE::JS
+			{
+			instance = new p5(main)
+			}
 		}
 
-		override public function draw(): void
+		public function main(pInst: Object): void
 		{
-			velY += gravity * deltaTime
-
-			var dX: Number = posX + velX * deltaTime
-			if (dX + radius > canvasW || dX < radius) {
-				velX *= -1
-			} else {
-				posX = dX
-			}
-
-			var dY: Number = posY + velY * deltaTime
-			if (dY + radius > canvasH || dY < radius) {
-				velY *= -1
-			} else {
-				posY = dY
-			}
-
-			background(0)
-			noStroke()
-			fill(255, 0, 0)
-			circle(posX, posY, 2*radius)
+			pInst.setup = setup 
+			pInst.draw = draw
 		}
 
-		private const canvasW: Number = 1600
-		private const canvasH: Number = 900
-		private const gravity: Number = 1000
-		private const radius: Number = 100
+		public function describe(text: String): void
+		{
+			COMPILE::JS
+			{
+				instance.describe(text)
+			}
+		}
 
-		private var posX: Number = canvasW/2
-		private var posY: Number = canvasH/2
+		public function createCanvas(width: Number, height: Number): void
+		{
+			COMPILE::JS
+			{
+				instance.createCanvas(width, height)
+			}
+		}
 
-		private var velX: Number = 200
-		private var velY: Number = 200	
+		public function circle(x: Number = 0, y: Number = 0, d: Number = 0): void
+		{
+			COMPILE::JS
+			{
+				instance.circle(x, y, d)
+			}
+		}
+
+		public function background(...args): void
+		{
+			COMPILE::JS
+			{
+				instance.background(args)
+			}
+		}
+
+		public function fill(...args): void
+		{
+			COMPILE::JS
+			{
+				instance.fill(args)
+			}
+		}
+
+		public function stroke(...args): void
+		{
+			COMPILE::JS
+			{
+				instance.stroke(args)
+			}
+		}
+
+		public function noFill(): void
+		{
+			COMPILE::JS
+			{
+				instance.noFill()
+			}
+		}
+
+		public function noStroke(): void
+		{
+			COMPILE::JS
+			{
+				instance.noStroke()
+			}
+		}
+
+		public function get deltaTime(): Number
+		{
+			return 0.001*instance.deltaTime;
+		}
+
+		public function start(): void {}
+		public function setup(): void {}
+		public function draw(): void {}
+
+		public static var instance: Object;
 	}
 }
