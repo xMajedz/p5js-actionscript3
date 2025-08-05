@@ -1,6 +1,5 @@
 package
 {
-	[JSIncludeScript(source="./p5.js")]
 	/**
 	 * @externs
 	 */
@@ -8,13 +7,14 @@ package
 	public class p5
 	{
 		/** 
-	         * <inject_script>
-	         * const script = document.createElement("script");
-	         * script.setAttribute("type", "text/javascript");
-	         * script.setAttribute("src", "https://cdn.jsdelivr.net/npm/p5@1.11.9/lib/p5.min.js");
-         	 * document.head.appendChild(script);
-	         * </inject_script>
-	         */
+	        * <inject_script>
+	        * const script = document.createElement("script");
+	        * script.setAttribute("type", "text/javascript");
+	        * script.setAttribute("src", "https://cdn.jsdelivr.net/npm/p5@1.11.9/lib/p5.min.js");
+         	* document.head.appendChild(script);
+	        * </inject_script>
+	        */
+
 		public function p5(sketch: Object) {}
 
 		public static function describe(text: String): void {}
