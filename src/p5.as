@@ -1,5 +1,6 @@
 package
 {
+	[JSIncludeScript(source="./p5.js")]
 	/**
 	 * @externs
 	 */

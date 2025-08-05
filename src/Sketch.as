@@ -6,14 +6,8 @@ package
 		{
 			COMPILE::JS
 			{
-			instance = new p5(main)
+				instance = new p5(main)
 			}
-		}
-
-		public function main(pInst: Object): void
-		{
-			pInst.setup = setup 
-			pInst.draw = draw
 		}
 
 		public function describe(text: String): void
@@ -83,6 +77,12 @@ package
 		public function get deltaTime(): Number
 		{
 			return 0.001*instance.deltaTime;
+		}
+
+		public function main(pInst: Object): void
+		{
+			pInst.setup = setup 
+			pInst.draw = draw
 		}
 
 		public function start(): void {}

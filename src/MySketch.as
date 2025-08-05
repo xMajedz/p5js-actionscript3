@@ -2,6 +2,11 @@ package
 {
 	public class MySketch extends Sketch
 	{
+		public function MySketch()
+		{
+			super()
+		}
+
 		override public function setup(): void
 		{
 			createCanvas(canvasW, canvasH)
