@@ -1,8 +1,7 @@
-# ActionScript3 isn't dead appearantly
+# Building with apache-royale 
 
-to build use apache-royale compiler, only emitting vanilla js because a custom html is provided. in bin/js-release
 ```
-mxmlc -tragets=JS src/Sketch.as
+mxmlc src/MySketch.as
 ```
 
 to run
@@ -14,9 +13,7 @@ example code
 ```
 package
 {
-	import p5.Sketch;
-
-	public class Sketch extends p5.Sketch
+	public class MySketch extends Sketch
 	{
 		override public function setup(): void
 		{
@@ -30,3 +27,4 @@ package
 	}
 }
 ```
+# ActionScript3 isn't dead appearantly
