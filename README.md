@@ -6,6 +6,8 @@ mxmlc src/MySketch.as
 
 to run
 ```
+npx http-server bin/js-release
+or
 python -m http.server -d bin/js-release
 ```
 
