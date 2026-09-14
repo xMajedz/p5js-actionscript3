@@ -10,7 +10,7 @@ python -m http.server -d bin/js-release
 ```
 
 example code
-```
+```as3
 package
 {
 	public class MySketch extends Sketch
